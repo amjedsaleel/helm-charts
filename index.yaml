@@ -1,0 +1,25 @@
+apiVersion: v1
+entries:
+  database:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-02-03T15:34:25.76482617+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 6ba37c9b82baace589498ad8643b062d8505b562b38e6c1d7ffe92f747f13b29
+    name: database
+    type: application
+    urls:
+    - database-0.1.0.tgz
+    version: 0.1.0
+  django-hello:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-02-03T15:34:25.765092612+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 1a63613ef58636961ce178298d1619375513482bd09ec8a8a798506275dde306
+    name: django-hello
+    type: application
+    urls:
+    - django-hello-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-02-03T15:34:25.764438588+05:30"
