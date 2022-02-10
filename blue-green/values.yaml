@@ -12,8 +12,8 @@ virtualService:
 
 services:
   version_1: 
-    name: varsion1.default.svc.cluster.local
+    name: version1.default.svc.cluster.local
     weight: 100
   version_2:
-    name: varsion2.default.svc.cluster.local
+    name: version2.default.svc.cluster.local
     weight: 0
