@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ .Values.virtualService.name }}
+spec:
+  hosts:
+  - {{ .Values.hosts }}
+  gateways:
+  - {{ .Values.geteway.name }}
+  http:
+    - route:
+      - destination:
+          host: {{ .Values.services.version_1.name }}
+        weight: {{ .Values.services.version_1.weight }}
+      - destination:
+          host: {{ .Values.services.version_2.name }}
+        weight: {{ .Values.services.version_2.weight }}

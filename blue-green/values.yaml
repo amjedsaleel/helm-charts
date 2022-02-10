@@ -1,0 +1,19 @@
+hosts: django-hello.com
+
+geteway:
+  name: django-hello
+  servers:
+    portNumber: 80
+    name: http
+    protocol: HTTP
+    
+virtualService:
+  name: django-hello-vs
+
+services:
+  version_1: 
+    name: varsion1.default.svc.cluster.local
+    weight: 100
+  version_2:
+    name: varsion2.default.svc.cluster.local
+    weight: 0
