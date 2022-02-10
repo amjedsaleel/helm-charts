@@ -1,9 +1,20 @@
 apiVersion: v1
 entries:
+  blue-green:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-02-10T19:24:14.864829512+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 7e13bdd00bf8ce58e6c7b32fa66e9187696e44a465015fbdee927d4f3b5761ef
+    name: blue-green
+    type: application
+    urls:
+    - blue-green-0.1.0.tgz
+    version: 0.1.0
   database:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-02-03T15:34:25.76482617+05:30"
+    created: "2022-02-10T19:24:14.865500617+05:30"
     description: A Helm chart for Kubernetes
     digest: 6ba37c9b82baace589498ad8643b062d8505b562b38e6c1d7ffe92f747f13b29
     name: database
@@ -14,7 +25,7 @@ entries:
   django-hello:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-02-03T15:34:25.765092612+05:30"
+    created: "2022-02-10T19:24:14.865978314+05:30"
     description: A Helm chart for Kubernetes
     digest: 1a63613ef58636961ce178298d1619375513482bd09ec8a8a798506275dde306
     name: django-hello
@@ -22,4 +33,4 @@ entries:
     urls:
     - django-hello-0.1.0.tgz
     version: 0.1.0
-generated: "2022-02-03T15:34:25.764438588+05:30"
+generated: "2022-02-10T19:24:14.86437439+05:30"
