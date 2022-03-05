@@ -19,15 +19,33 @@ spec:
       containers:
         {{- include "jobsway-admin-backend" . | indent 8 }}
           ports:
-            - containerPort: 4001
+            - containerPort: 4000
           env:
             - name: MONGODB_URL
               valueFrom:
                 secretKeyRef:
                   name: {{ .Release.Name }}-secret
                   key: mongodb-url
+            - name: PORT
+              value: "{{ .Values.image.port }}"
           resources:
             requests:
               cpu: 250m
             limits:
               cpu: 500m
+          startupProbe:
+            httpGet:
+              path: {{ .Values.startupProbe.path }}
+              port: {{ .Values.image.port }}
+            initialDelaySeconds: {{ .Values.startupProbe.initialDelaySeconds }}
+            failureThreshold: {{ .Values.startupProbe.failureThreshold }}
+            periodSeconds: {{ .Values.startupProbe.periodSeconds }}
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.livenessProbe.path }}
+              port: {{ .Values.image.port }}
+            initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+            failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
+            periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+          
+

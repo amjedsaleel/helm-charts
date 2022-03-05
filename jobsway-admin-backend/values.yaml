@@ -9,6 +9,7 @@ image:
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
+  port: "4001"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -28,3 +29,15 @@ autoscaling:
 credentials:
   monodburl: ""
   databasename: ""
+
+startupProbe:
+  path: "/"
+  initialDelaySeconds: 10
+  failureThreshold: 2
+  periodSeconds: 5
+
+livenessProbe:
+  path: /
+  initialDelaySeconds: 1
+  failureThreshold: 2
+  periodSeconds: 20
