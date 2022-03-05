@@ -7,7 +7,9 @@ metadata:
     app: {{ .Release.Name }}
 
 spec:
-  replicas: 1
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
   selector:
     matchLabels:
       app: {{ .Release.Name }}
@@ -30,9 +32,9 @@ spec:
               value: "{{ .Values.image.port }}"
           resources:
             requests:
-              cpu: 250m
+              cpu: {{ .Values.resources.requests.cpu }}
             limits:
-              cpu: 500m
+              cpu: {{ .Values.resources.limits.cpu }}
           startupProbe:
             httpGet:
               path: {{ .Values.startupProbe.path }}
