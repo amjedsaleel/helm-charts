@@ -20,7 +20,7 @@ service:
   port: 4001
 
 ingress:
-  enabled: true
+  enabled: false
   hosts:
     - host: jobsway-admin.local
       paths:
