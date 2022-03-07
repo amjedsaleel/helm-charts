@@ -1,0 +1,25 @@
+ingress:
+  hosts:
+    - host: jobswayadmin.local
+      paths:
+        - path: /admin
+          pathType: Prefix
+          backend:
+            service:
+              name: jab-service
+              port:
+                number: 4001
+        - path: /company
+          pathType: Prefix
+          backend:
+            service:
+              name: jcb-service
+              port:
+                number: 4000
+        - path: /api/v1/user/
+          pathType: Prefix
+          backend:
+            service:
+              name: jub-service
+              port:
+                number: 4002
