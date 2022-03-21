@@ -1,6 +1,7 @@
 # Default values for jobsway-admin-service.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
+version: v1
 
 replicaCount: 1
 
