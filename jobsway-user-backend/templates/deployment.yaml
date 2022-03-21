@@ -5,6 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
   labels:
     app: {{ .Release.Name }}
+    version: {{ .Values.version }}
 
 spec:
   {{- if not .Values.autoscaling.enabled }}
